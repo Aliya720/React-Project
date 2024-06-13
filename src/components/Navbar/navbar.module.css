@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainNav {
+    background-color: #32a8a0;
+    color: #ffffff;
+}
+
+.navItems {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    align-content: center;
+    height: 70px;
+    align-items: center;
+}
+
+.navLinks {
+    justify-content: space-evenly;
+    font-size: 20px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.navIcon {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    flex: 2;
+    text-align: center;
+}
+
+.navLinks:hover {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.searchProduct {
+    height: 30px;
+    width: 300px;
+    flex: 2;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
