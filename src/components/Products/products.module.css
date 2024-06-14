@@ -77,3 +77,8 @@
     display: flex;
     color: #ffffff;
 }
+
+.navLink {
+    text-decoration: none;
+    color: black;
+}
