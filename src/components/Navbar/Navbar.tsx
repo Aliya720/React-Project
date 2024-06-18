@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 import classes from "./navbar.module.css";
 import { useCart } from "../../pages/Cart/CartContext";
-import cartIcon from "../../assets/icons/cartIcon.svg";
-import UserIcon from "../../assets/icons/UserIcon";
+import { CartIcon } from "../../assets/icons/CartIcon";
 
 export const Navbar = () => {
   const cartState = useCart();
@@ -43,15 +42,15 @@ export const Navbar = () => {
           <li className={classes.navItem}>
             <NavLink className={classes.navLinks} to="/">
               {" "}
-              <UserIcon />
+              {/* <UserIcon /> */}
               Account
             </NavLink>{" "}
           </li>
           <li className={classes.navItem}>
             <NavLink className={classes.navLinks} to="/cart">
               {" "}
-              Cart{" "}
-              <img src={cartIcon} alt="cart" className={classes.svgIcons} />
+              {/* <img src={cartIcon} alt="cart" className={classes.svgIcons} /> */}
+              <CartIcon />
               <button className={classes.cartLength}>
                 {cartState?.cartItems.length}
               </button>

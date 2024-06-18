@@ -5,7 +5,7 @@ export const Cart = () => {
   const cartState = useCart();
   return (
     <div className={classes.cartWrapper}>
-      {cartState.cartItems.map((item) => (
+      {cartState?.cartItems.map((item) => (
         <div key={item.id}>
           <div className={classes.productWrapper}>
             <img
@@ -43,13 +43,13 @@ export const Cart = () => {
           <hr />
         </div>
       ))}
-      {cartState.cartItems.length > 0 ? (
+      {cartState!.cartItems.length > 0 ? (
         <div className={classes.cartTotal}>
-          <h1>Total: Rs{cartState.getCartTotal()}</h1>
+          <h1>Total: Rs{cartState?.getCartTotal()}</h1>
           <button
             className={classes.clearCart}
             onClick={() => {
-              cartState.clearCart();
+              cartState?.clearCart();
             }}
           >
             Clear cart

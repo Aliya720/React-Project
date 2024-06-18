@@ -7,5 +7,8 @@ export type CartType = {
     setCartItems: React.Dispatch<React.SetStateAction<ProductType[]>>,
     products: ProductType[],
     setProducts: React.Dispatch<React.SetStateAction<ProductType[]>>,
-
+    addToCart: (item: ProductType) => void,
+    removeFromCart: (item: ProductType) => void,
+    getCartTotal: () => number,
+    clearCart: () => void,
 }
