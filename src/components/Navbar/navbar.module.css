@@ -19,11 +19,16 @@
     align-items: center;
 }
 
-.navLinks {
+.navItem {
     justify-content: space-evenly;
     font-size: 20px;
     cursor: pointer;
     flex: 1;
+}
+
+.navLinks {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .navIcon {
@@ -48,4 +53,16 @@
     border: none;
     padding: 5px;
     outline: none;
+}
+
+.cartLength {
+    border-radius: 50%;
+    border: none;
+    width: 15px;
+    height: 15px;
+    background: #e7e7e7;
+}
+
+.svgIcons {
+    /* margin-top: 50px; */
 }

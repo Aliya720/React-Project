@@ -45,7 +45,7 @@
     color: #747474;
 }
 
-.productAddToCartBtn {
+.AddToCartBtn {
     border-radius: 50px;
     width: 50%;
     height: 40px;
@@ -57,7 +57,7 @@
     padding: 5px;
 }
 
-.productAddToCartBtn:hover {
+.AddToCartBtn:hover {
     background-color: #32a8a0;
     color: #ffffff;
 }

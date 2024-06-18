@@ -19,7 +19,7 @@ export type ProductType = {
     minimumOrderQuantity: number,
     meta: ProductMetaType,
     images: string[]
-
+    quantity: number
 }
 
 type ProductDimensionType = {
