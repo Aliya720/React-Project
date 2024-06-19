@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 import classes from "./navbar.module.css";
-import { useCart } from "../../pages/Cart/CartContext";
-import { CartIcon } from "../../assets/icons/CartIcon";
+import { CartIcon } from "../Icons/CartIcon";
+import { UserIcon } from "../Icons/UserIcon";
+import { SearchIcon } from "../Icons/SearchIcon";
+import { ChevronDownIcon } from "../Icons/ChevronDownIcon";
 
 export const Navbar = () => {
-  const cartState = useCart();
   return (
     <>
       <nav className={classes.mainNav}>
@@ -18,6 +19,7 @@ export const Navbar = () => {
             <NavLink className={classes.navLinks} to="/products">
               {" "}
               Products
+              <ChevronDownIcon />
             </NavLink>
           </li>
           <li className={classes.navItem}>
@@ -37,23 +39,20 @@ export const Navbar = () => {
               type="search"
               placeholder="Search"
               className={classes.searchProduct}
-            />
+            />{" "}
+            <SearchIcon />
           </li>
           <li className={classes.navItem}>
             <NavLink className={classes.navLinks} to="/">
               {" "}
-              {/* <UserIcon /> */}
-              Account
+              Sign in
+              <UserIcon />
             </NavLink>{" "}
           </li>
           <li className={classes.navItem}>
             <NavLink className={classes.navLinks} to="/cart">
               {" "}
-              {/* <img src={cartIcon} alt="cart" className={classes.svgIcons} /> */}
               <CartIcon />
-              <button className={classes.cartLength}>
-                {cartState?.cartItems.length}
-              </button>
             </NavLink>
           </li>
         </ul>
