@@ -11,4 +11,5 @@ export type CartType = {
     removeFromCart: (item: ProductType) => void,
     getCartTotal: () => number,
     clearCart: () => void,
+
 }

@@ -1,3 +1,3 @@
 export const ProductsApi = {
-    getProduct: "https://dummyjson.com/products",
+    getProductList: "https://dummyjson.com/products",
 }

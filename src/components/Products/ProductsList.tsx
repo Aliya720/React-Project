@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ProductListType } from "./product.types";
-import classes from "./products.module.css";
+import classes from "./productsList.module.css";
 import { ProductsApi } from "../../api/products.endpoints";
 import { Rating } from "react-simple-star-rating";
 import { NavLink } from "react-router-dom";
@@ -13,7 +13,7 @@ const ProductsList = () => {
 
   const cartState = useCart();
 
-  const getProduct = async (url: string) => {
+  const getProductList = async (url: string) => {
     try {
       const { data } = await axios.get(url);
       setProductList(data);
@@ -27,7 +27,7 @@ const ProductsList = () => {
   };
 
   useEffect(() => {
-    getProduct(ProductsApi.getProduct);
+    getProductList(ProductsApi.getProductList);
   }, []);
   return (
     <>
@@ -37,19 +37,23 @@ const ProductsList = () => {
         {productList?.products.map((product, idx) => {
           return (
             <div key={idx} className={classes.product}>
-              <img
-                className={classes.productImage}
-                src={product.images[0]}
-                alt="product-image"
-              />
-              <h1 className={classes.productTitles}>
-                {product.title}
-                <p className={classes.productPrice}>
-                  <span className={classes.rupeeFont}>&#8377;</span>
-                  {product.price}
-                </p>
-              </h1>
-
+              <NavLink
+                to={`/product/${product.id}`}
+                className={classes.navLink}
+              >
+                <img
+                  className={classes.productImage}
+                  src={product.images[0]}
+                  alt="product-image"
+                />
+                <h1 className={classes.productTitles}>
+                  {product.title}
+                  <p className={classes.productPrice}>
+                    <span className={classes.rupeeFont}>&#8377;</span>
+                    {product.price}
+                  </p>
+                </h1>
+              </NavLink>
               <p className={classes.productDescription}>
                 {product.description.slice(0, 30)}..
               </p>

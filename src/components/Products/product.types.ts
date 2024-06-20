@@ -14,7 +14,7 @@ export type ProductType = {
     dimensions: ProductDimensionType,
     shippingInformation: string,
     availabilityStatus: string,
-    review: ProductReviewType,
+    review: ProductReviewType[],
     returnPolicy: string,
     minimumOrderQuantity: number,
     meta: ProductMetaType,

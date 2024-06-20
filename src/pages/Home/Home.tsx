@@ -1,5 +1,5 @@
 import { Navbar } from "../../components/Navbar/Navbar";
-import ProductsList from "../../components/Products/Products";
+import ProductsList from "../../components/Products/ProductsList";
 
 const Home = () => {
   return (
