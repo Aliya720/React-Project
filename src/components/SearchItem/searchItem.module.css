@@ -1,0 +1,30 @@
+.searchProduct {
+    height: 30px;
+    width: 300px;
+    flex: 2;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+
+.productTitles {
+    display: none;
+    position: absolute;
+    max-width: 300px;
+    max-height: 300px;
+    background-color: rgba(217, 245, 236, 0.6);
+    color: black;
+    overflow-y: scroll;
+    top: 30px;
+    transition: opacity .15s ease-in-out;
+}
+
+.show {
+    display: block;
+}
+
+.title {
+    padding: 5px;
+    font-size: 15px;
+}

@@ -17,9 +17,9 @@ export const Cart = () => {
               <h1 className={classes.productTitle}>{item.title}</h1>
               <div className={classes.productQuantity}>
                 <p className={classes.quantityTitle}>Quantity</p>
-                <div className={classes["product-action"]}>
+                <div className={classes.productAction}>
                   <button
-                    className={classes["product-action"]}
+                    className={classes.productAction}
                     onClick={() => {
                       cartState.addToCart(item);
                     }}
@@ -28,7 +28,7 @@ export const Cart = () => {
                   </button>
                   <p>{item.quantity}</p>
                   <button
-                    className={classes["product-action"]}
+                    className={classes.productAction}
                     onClick={() => {
                       cartState.removeFromCart(item);
                     }}

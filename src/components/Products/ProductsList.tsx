@@ -6,6 +6,7 @@ import { ProductsApi } from "../../api/products.endpoints";
 import { Rating } from "react-simple-star-rating";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../pages/Cart/CartContext";
+import AddToCart from "../Button/AddToCart";
 
 const ProductsList = () => {
   const [productList, setProductList] = useState<ProductListType>();
@@ -18,6 +19,7 @@ const ProductsList = () => {
       const { data } = await axios.get(url);
       setProductList(data);
       cartState?.setProducts(data.products);
+      cartState?.setFilteredProducts(data.products);
       return data;
     } catch (error) {
       let errorMessage = "Unknown Error";
@@ -34,18 +36,18 @@ const ProductsList = () => {
       <h1 className={classes.mainTitle}>Items You Might Like</h1>
       <section className={classes.productWrapper}>
         {error !== "" && <h1>{error}</h1>}
-        {productList?.products.map((product, idx) => {
+        {cartState?.filteredProducts?.map((product, idx) => {
           return (
             <div key={idx} className={classes.product}>
+              <img
+                className={classes.productImage}
+                src={product.images[0]}
+                alt="product-image"
+              />
               <NavLink
                 to={`/product/${product.id}`}
                 className={classes.navLink}
               >
-                <img
-                  className={classes.productImage}
-                  src={product.images[0]}
-                  alt="product-image"
-                />
                 <h1 className={classes.productTitles}>
                   {product.title}
                   <p className={classes.productPrice}>
@@ -65,18 +67,7 @@ const ProductsList = () => {
                 />
                 <p className={classes.ratingNumber}>{product.rating}</p>
               </div>
-              <NavLink to="/cart" className={classes.navLink}>
-                <button
-                  className={classes.AddToCartBtn}
-                  onClick={() => {
-                    {
-                      cartState?.addToCart(product);
-                    }
-                  }}
-                >
-                  Add to Cart
-                </button>
-              </NavLink>
+              <AddToCart currentProduct={product} />
             </div>
           );
         })}

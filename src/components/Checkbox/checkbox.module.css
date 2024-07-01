@@ -1,0 +1,22 @@
+.form {
+    display: inline-block;
+}
+
+.dropdownOption {
+    display: inline-block;
+    width: 180px;
+    padding: 10px;
+    transition: opacity .15s ease-in-out;
+}
+
+.actionBtn {
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    color: #000000;
+    background-color: #fff;
+    position: sticky;
+    margin: 10px;
+    justify-content: center;
+    cursor: pointer;
+}

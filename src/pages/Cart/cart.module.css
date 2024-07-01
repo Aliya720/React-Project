@@ -18,7 +18,7 @@
 
 .productTitle {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 .productPrice {
@@ -27,7 +27,7 @@
     margin: 30px 20px 0px auto;
 }
 
-.product-action {
+.productAction {
     border: none;
     padding: 4px;
     gap: 15px;
@@ -75,4 +75,53 @@
     font-size: 20px;
     color: #6e0e06;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .cartWrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .productWrapper {
+        width: 100%;
+    }
+
+    .productImage {
+        height: 50px;
+
+    }
+
+    .productTitle {
+        margin: 0;
+        font-size: 10px;
+    }
+
+    .productQuantity {
+        margin-top: 5px;
+        font-size: 10px;
+    }
+
+    .productAction {
+        font-size: 5px;
+    }
+
+    .productPrice {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .cartTotal {
+        font-size: 10px;
+    }
+
+    .clearCart {
+        font-size: 10px;
+    }
+
+    .emptyCart {
+        padding: 10px;
+        font-size: 20px;
+    }
+
 }

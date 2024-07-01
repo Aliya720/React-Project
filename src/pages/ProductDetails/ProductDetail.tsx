@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
-import { Navbar } from "../../components/Navbar/Navbar";
 import { ProductType } from "../../components/Products/product.types";
 import classes from "./productDetail.module.css";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import { Rating } from "react-simple-star-rating";
+import AddToCart from "../../components/Button/AddToCart";
 
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState<ProductType>();
   const [mainImage, setMainImage] = useState(currentProduct?.images[0]);
   const { productId } = useParams();
+  const [loading, setLoading] = useState(false);
 
   const getProductDetails = async (url: string) => {
+    setLoading(true);
     const { data } = await axios.get(url);
     setCurrentProduct(data);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -26,9 +29,12 @@ const ProductDetail = () => {
     }
   }, [currentProduct]);
 
+  if (loading && !currentProduct) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <>
-      <Navbar />
       <div className={classes.productWrapper}>
         <div className={classes.Images}>
           <img
@@ -69,13 +75,15 @@ const ProductDetail = () => {
             {currentProduct?.description}
           </p>
         </div>
-        <hr />
         <div className={classes.otherDetails}>
+          <div className={classes.btn}>
+            <AddToCart currentProduct={currentProduct} />
+          </div>
           <p>{currentProduct?.warrantyInformation}</p>
           <p>{currentProduct?.returnPolicy}</p>
           <p>{currentProduct?.shippingInformation}</p>
           <p className={classes.productRatings}>
-            <Rating initialValue={currentProduct?.rating} />
+            <Rating initialValue={currentProduct?.rating} readonly />
             {currentProduct?.rating}
           </p>
         </div>

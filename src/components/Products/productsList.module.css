@@ -45,22 +45,7 @@
     color: #747474;
 }
 
-.AddToCartBtn {
-    border-radius: 50px;
-    width: 50%;
-    height: 40px;
-    align-items: center;
-    border: #747474 solid 2px;
-    background-color: #ffffff;
-    font-weight: 550;
-    cursor: pointer;
-    padding: 5px;
-}
 
-.AddToCartBtn:hover {
-    background-color: #32a8a0;
-    color: #ffffff;
-}
 
 .ratingStar {
     height: 20px;
@@ -82,3 +67,5 @@
     text-decoration: none;
     color: inherit;
 }
+
+@media only screen and (max-width: 600px) {}

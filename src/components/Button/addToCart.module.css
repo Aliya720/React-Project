@@ -1,0 +1,54 @@
+.AddToCartBtn {
+    border-radius: 50px;
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    border: #747474 solid 2px;
+    background-color: #ffffff;
+    font-weight: 550;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+}
+
+.AddToCartBtn:hover {
+    background-color: #32a8a0;
+    color: #ffffff;
+}
+
+.actionWrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btnWrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.productAction {
+    border: none;
+    padding: 4px;
+    display: inline-block;
+    width: 20px;
+    font-size: 18px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.productAction:disabled {
+    cursor: not-allowed;
+}
+
+.navLink {
+    text-decoration: none;
+    color: inherit;
+    border: #747474 solid 1px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 50px;
+}
+
+.navLink:hover {
+    background-color: #32a8a0;
+    color: #ffffff;
+}
