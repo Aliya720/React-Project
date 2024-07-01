@@ -20,6 +20,7 @@ const ProductsList = () => {
       setProductList(data);
       cartState?.setProducts(data.products);
       cartState?.setFilteredProducts(data.products);
+      console.log("product List", productList);
       return data;
     } catch (error) {
       let errorMessage = "Unknown Error";

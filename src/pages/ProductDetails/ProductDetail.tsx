@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ProductType } from "../../components/Products/product.types";
 import classes from "./productDetail.module.css";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Rating } from "react-simple-star-rating";
 import AddToCart from "../../components/Button/AddToCart";
@@ -77,7 +77,7 @@ const ProductDetail = () => {
         </div>
         <div className={classes.otherDetails}>
           <div className={classes.btn}>
-            <AddToCart currentProduct={currentProduct} />
+            <AddToCart currentProduct={currentProduct!} />
           </div>
           <p>{currentProduct?.warrantyInformation}</p>
           <p>{currentProduct?.returnPolicy}</p>
