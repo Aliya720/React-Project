@@ -43,8 +43,10 @@ const ProductCategory = () => {
     <>
       <div className={classes.dropdown}>
         <label className={classes.dropdownLabel} onClick={IsChecked}>
-          Category {}
-          <ChevronDownIcon />
+          Category {}{" "}
+          <i>
+            <ChevronDownIcon />
+          </i>
         </label>
         <div
           className={`${classes.dropdownList} ${

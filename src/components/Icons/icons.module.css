@@ -11,11 +11,9 @@
 }
 
 .userIcon {
-    position: absolute;
     margin-left: 5px;
 }
 
 .chevronDownIcon {
     fill: #ffff;
-    position: absolute;
 }

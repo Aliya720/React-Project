@@ -4,6 +4,9 @@ import { Cart } from "./pages/Cart/Cart";
 import ProductDetail from "./pages/ProductDetails/ProductDetail";
 import Layout from "./components/Layouts/Layout";
 import ProductCategory from "./components/ProductCategory/ProductCategory";
+import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
+import ProtectedRoute from "./components/ProtectedRoutes/ProtectedRoute";
 
 function App() {
   const router = useRoutes([
@@ -16,8 +19,13 @@ function App() {
           element: <Home />,
         },
         {
-          path: "cart",
-          element: <Cart />,
+          element: <ProtectedRoute />,
+          children: [
+            {
+              path: "cart",
+              element: <Cart />,
+            },
+          ],
         },
         {
           path: "product/:productId",
@@ -26,6 +34,14 @@ function App() {
         {
           path: "/category",
           element: <ProductCategory />,
+        },
+        {
+          path: "/signIn",
+          element: <SignIn />,
+        },
+        {
+          path: "/signUp",
+          element: <SignUp />,
         },
       ],
     },

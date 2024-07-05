@@ -5,7 +5,9 @@
 
 .dropdownLabel {
     cursor: pointer;
-
+    font-size: large;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -24,4 +26,14 @@
 
 .dropdownList.show {
     display: block;
+}
+
+@media only screen and (max-width: 700px) {
+    .dropdownList {
+        background: none;
+        position: relative;
+        width: 100vw;
+        left: 0px;
+        top: 0;
+    }
 }
