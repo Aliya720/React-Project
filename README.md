@@ -1,6 +1,20 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+Browse a list of products
+View product details
+Add/remove items from the shopping cart
+Responsive design
+# Technologies Used
+Frontend: HTML, CSS, Typescript
+Backend: Dummy JSON Server (for simulating API responses)
+Libraries/Frameworks: React, React router
+
+Credentials to log in
+ username: 'emilys',
+ password: 'emilyspass',
+ -----or----
+ any username and password avalaible on dummy json auth
 
 Currently, two official plugins are available:
 
